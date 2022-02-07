@@ -1,0 +1,376 @@
+<template>
+  <div>
+    <!-- Header -->
+    <div class="relative overflow-hidden flex flex-col lg:block">
+      <div class="z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-7xl mx-auto w-full lg:pb-28 xl:pb-32 order-2">
+        <div class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+          <div class="text-left md:text-center lg:text-left">
+            <h1 class="text-4xl tracking-tight font-bold text-gray-900 sm:text-5xl md:text-6xl">
+              Marc Ruemekorf
+            </h1>
+          </div>
+        </div>
+      </div>
+      <div class="order-1 lg:absolute lg:bottom-0 lg:right-0 lg:w-1/2">
+        <img class="h-auto w-full sm:h-auto md:h-auto lg:w-full lg:h-auto" src="~/assets/images/hero-logos.png" alt="" />
+      </div>
+    </div>
+
+    <!-- About -->
+    <div class="max-w-7xl mx-auto mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl pb-16 md:pb-0">
+      <div class="md:grid md:grid-cols-5 md:grid-flow-col md:gap-6">
+        <div class="col-span-2">
+          <p class="text-2xl mb-12">Front-end ontwikkelaar met een grafisch ontwerp achtergrond en een leergierige mentaliteit.</p>
+          <dl>
+            <dt class="sr-only">Geboorte datum</dt>
+            <dd>Geboorte datum: <span class="font-bold">24-06-1991</span></dd>
+            <dt class="sr-only">Woonplaats</dt>
+            <dd>Woonplaats: <span class="font-bold">Rosmalen</span></dd>
+            <dt class="sr-only">Nationaliteit</dt>
+            <dd>Nationaliteit: <span class="font-bold">Nederlands/Amerikaans</span></dd>
+            <dt class="sr-only">Telefoonnummer</dt>
+            <dd>Telefoonnummer: <span class="font-bold">0652614323</span></dd>
+            <dt class="sr-only">E-mail</dt>
+            <dd>E-mail: <span class="font-bold">hallo@marcruemekorf.nl</span></dd>
+          </dl>
+
+          <a href="/downloads/CV_marcruemekorf.pdf" target="_blank" class="inline-flex items-center px-3 py-2 mt-6 border border-transparent shadow-sm text-sm leading-4 font-medium rounded-md text-white bg-black hover:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black">
+            Download CV
+          </a>
+        </div>
+        <div class="col-span-3 content-start mt-12 md:mt-0 lg:mt-24">
+          <h3 class="text-xl font-bold">Over mij</h3>
+          <p class="mt-3">
+            Na mijn studie in media vormgeving op het Koning Willem I College ben ik aan de slag gegaan als webdesigner bij een jong en ambitieus webbureau in Breda. Hier werd mijn interesse in het ontwikkelen van websites en applicaties opgewekt. Ik heb altijd de wens gehad om mijn ontwerpen leven in te blazen en heb zo een passie gekweekt voor front-end technieken. Sindsdien ben ik aan de slag gegaan als ZZP’er en heb ik mijzelf verdiept in de nodige technieken om de meest efficiënte en gebruiksvriendelijke websites en applicaties te ontwikkelen.
+          </p>
+          <p class="mt-3">
+            Tijdens mijn periode als freelancer heb ik met een klein team ook veel tijd besteed aan het oprichten van 2 IT bedrijfjes dat gespecialiseerde software ontwikkelde. Hierbij was ik verantwoordelijk voor het design en de front-end.
+          </p>
+          <p class="mt-3">
+            Ook in mijn vrije tijd houd ik mij bezig met het ontwikkelen van nieuwe applicaties/websites en het uitproberen van verschillende technieken en frameworks. Mijn focus ligt momenteel op het beheersen van Javascript en frameworks zoals React en Vue.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Experience -->
+    <div class="max-w-7xl mx-auto mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
+      <h2 class="text-2xl font-bold mb-6">Werkervaring</h2>
+      <div class="md:grid md:grid-cols-12 md:grid-rows-5 md:grid-flow-col md:gap-y-6">
+        <div v-for="(block, index) in experience" :key="index" :class="[...block.size]">
+          <div :class="['bg-white border-b-2 h-full w-full p-3 rounded shadow-md', block.borderColor]">
+            <h3 class="font-semibold">{{ block.company }}</h3>
+            <p class="text-sm text-gray-500">{{ block.period }}</p>
+            <p class="mt-2">{{ block.position }}</p>
+            <div class="mt-3 flex space-x-2">
+              <img v-for="(skill, index) in block.skills" :key="index" :src="require(`~/assets/images/logos/${skill}.png`)" alt="" class="h-5 w-5" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="bg-gradient-to-b from-gray-100 via-gray-50 -mt-12">
+      <div class="max-w-4xl mx-auto px-4 py-16 sm:px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:pt-24 lg:px-8">
+        <h2 class="text-2xl font-bold mb-6">Projecten waar ik aan heb mogen werken</h2>
+        <p class="mt-4 max-w-3xl text-lg">
+          Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis. Blandit aliquam sit nisl euismod mattis in.
+        </p>
+        <div class="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
+          <div v-for="project in projects" :key="project.name">
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold">{{ project.name }}</h3>
+              <p class="mt-2 text-base">
+                {{ project.description }}
+              </p>
+              <p class="mt-3 text-sm text-gray-400">
+                {{ project.responsibilities.join(', ') }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Opleidingen -->
+    <div>
+      <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-20 lg:px-8">
+        <div class="lg:grid lg:grid-cols-3 lg:gap-12">
+          <div>
+            <h2 class="text-2xl font-bold mb-6">Opleidingen en relevante kennis</h2>
+            <p class="mt-4 text-lg text-gray-500">Ik probeer bij te blijven door online cursussen te volgen. Zo ben ik regelmatig actief op FreeCodeCamp en Udemy.</p>
+          </div>
+          <div class="mt-12 lg:mt-0 lg:col-span-2">
+            <dl class="space-y-12">
+              <div>
+                <dt>
+                  <span class="block text-lg leading-6 font-semibold text-gray-900">FreeCodeCamp, online - <span class="italic">Full Stack Web Development</span></span>
+                  <span class="block text-sm text-gray-400">2016 - 2017</span>
+                </dt>
+                <dd class="mt-2 text-base text-gray-500">Tijdens mijn opleiding heb ik de basis geleerd.</dd>
+              </div>
+              <div>
+                <dt>
+                  <span class="block text-lg leading-6 font-semibold text-gray-900">Koning Willen I College, 's-Hertongenbosch - <span class="italic">Mediavormgeving</span></span>
+                  <span class="block text-sm text-gray-400">2009 - 2013</span>
+                </dt>
+                <dd class="mt-2 text-base text-gray-500">Tijdens mijn opleiding heb ik de basis geleerd.</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white">
+      <div class="max-w-7xl mx-auto py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-bold mb-6">Vaardigheden</h2>
+        <div class="-mt-6 -ml-6 flex flex-wrap lg:-ml-6">
+          <div v-for="(skill, index) in skills" :key="index" class="mt-6 ml-6 flex flex-shrink-0 lg:flex-grow-0 lg:ml-6" v-tooltip="skill.name">
+            <img class="max-h-12" :src="require(`~/assets/images/logos/${skill.filename}.png`)" :alt="skill.name">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+// import { ref } from '@nuxtjs/composition-api'
+
+export default {
+  name: 'IndexPage',
+  setup() {
+    const experience = [
+      {
+        company: "Celebrate Media",
+        position: "Webdesigner",
+        period: "2013",
+        size: ['row-start-1 col-start-1 col-span-3'],
+        borderColor: "border-green-500",
+        skills: [
+          "photoshop",
+          "illustrator"
+        ]
+      },
+      {
+        company: "Freelance",
+        position: "Graphic & UI/UX designer, Front-end developer",
+        period: "2013 - heden",
+        size: ['row-start-2 col-start-3 col-span-11'],
+        borderColor: "border-black",
+        skills: [
+          "affinity-designer",
+          "affinity-photo",
+          "affinity-publisher",
+          "google-web-designer",
+          "sketch",
+          "vscode",
+          "jetbrains",
+          "sourcetree",
+          "trello",
+          "wordpress"
+        ]
+      },
+      {
+        company: "Launchtin",
+        position: "Front-end developer",
+        period: "2015 - 2018",
+        size: ['row-start-3 col-start-4 col-span-5'],
+        borderColor: "border-pink-600",
+        skills: [
+          "illustrator",
+          "photoshop",
+          "indesign",
+          "sketch",
+          "vscode",
+          "sourcetree",
+          "trello",
+          "wordpress"
+        ]
+      },
+      {
+        company: "Doen IT",
+        position: "UI/UX designer, Front-end developer",
+        period: "2018 - 2020",
+        size: ['row-start-4 col-start-7 col-span-3'],
+        borderColor: "border-teal-500",
+        skills: [
+          "affinity-designer",
+          "affinity-photo",
+          "affinity-publisher",
+          "sketch",
+          "jetbrains",
+          "sourcetree",
+          "jira",
+          "wordpress"
+        ]
+      },
+      {
+        company: "Digital Forge",
+        position: "UI/UX designer, Front-end developer",
+        period: "2020 - heden",
+        size: ['row-start-5 col-start-10 col-span-3'],
+        borderColor: "border-violet-900",
+        skills: [
+          "affinity-designer",
+          "affinity-photo",
+          "affinity-publisher",
+          "sketch",
+          "jetbrains",
+          "sourcetree",
+          "jira",
+          "wordpress"
+        ]
+      }
+    ]
+    const projects = [
+      {
+        name: "Groenergras Hoveniers",
+        description: "GroenerGras Hoveniers had een platform nodig om aangesloten hoveniers een plek te geven op het web. Ik heb het hele proces mogen bijstaan van ontwerp tot ontwikkeling en onderhoud.",
+        responsibilities: ["Webdesign", "Ontwikkeling", "SEO"]
+      },
+      {
+        name: "Dé OnderhoudsHovenier",
+        description: "Een initiatief om eenvoudig en snel vakhoveniers te vinden in de buurt. Hierbij heb ik het ontwerp proces bijgestaan en de website vervolgens op het Wordpress CMS online gezet.",
+        responsibilities: ["Webdesign", "Ontwikkeling", "SEO"]
+      },
+      {
+        name: "Fitland",
+        description: "Ik heb Fitland IT mogen ondersteunen met het ontwerpen en ontwikkelen van een compleet nieuwe website en online advertenties via Google Adwords.",
+        responsibilities: ["Webdesign", "Grafisch design"]
+      },
+      {
+        name: "Smart City Plaza",
+        description: "Een onafhankelijk platform voor overheden, adviseurs en installateurs met Smart City oplossingen voor de openbare ruimte. Ik ben verantwoordelijk geweest voor de branding, webdesign en ontwikkeling.",
+        responsibilities: ["Grafisch design", "Webdesign", "Ontwikkeling"]
+      },
+      {
+        name: "City Resort Hotels",
+        description: "Een initiatief om eenvoudig en snel vakhoveniers te vinden in de buurt. Hierbij heb ik het ontwerp proces bijgestaan en de website vervolgens in het CMS Wordpress online gezet.",
+        responsibilities: ["Webdesign", "Ontwikkeling"]
+      },
+      {
+        name: "PayIBAN",
+        description: "PayIBAN maakt het makkelijk om iDeal, iDIN en incassomachtigen te implementeren in een website of webshop. Deze diensten kunnen online aangevraagd worden. Ik heb de website mogen ontwerpen en ontwikkelen waar dit in mogelijk wordt gemaakt.",
+        responsibilities: ["Webdesign", "Ontwikkeling"]
+      },
+      {
+        name: "Bedankjevrijwilliger",
+        description: "Het is hartstikke belangrijk dat je je vrijwilligers in het zonnetje zet. Het platform van bedankjevrijwilliger bied de kans om de vrijwilliger eens te bedanken voor zijn of haar inzet door middel van een filmpje",
+        responsibilities: ["Grafisch design", "Webdesign", "Ontwikkeling"]
+      },
+      {
+        name: "Vrijwilligersprijzen.tv",
+        description: "Elk jaar maken vrijwilligersorganisaties kans een prijs te winnen enkel door hun eigen inzet. Vrijwilligersprijzen.tv heeft de prijsuitreiking van 2021 live uitgezonden.",
+        responsibilities: ["Webdesign", "Ontwikkeling"]
+      },
+      {
+        name: "Vrijwilligersprijzen.nl",
+        description: "Door middel van een presentatie in de vorm van een filmpje of presentatie worden vrijwilligers in het zonnetje gezet en maken zij automatisch kans op een prijs.",
+        responsibilities: ["Webdesign", "Ontwikkeling"]
+      },
+    ]
+    const skills = [
+      {
+        filename: 'photoshop',
+        name: 'Adobe Photoshop'
+      },
+      {
+        filename: 'illustrator',
+        name: 'Adobe Illustrator'
+      },
+      {
+        filename: 'adobe-xd',
+        name: 'Adobe XD'
+      },
+      {
+        filename: 'sketch',
+        name: 'Sketch'
+      },
+      {
+        filename: 'figma',
+        name: 'Figma'
+      },
+      {
+        filename: 'google-web-designer',
+        name: 'Googe Web Designer'
+      },
+      {
+        filename: 'affinity-designer',
+        name: 'Affinity Desigener'
+      },
+      {
+        filename: 'affinity-photo',
+        name: 'Affinity Photo'
+      },
+      {
+        filename: 'affinity-publisher',
+        name: 'Affinity Publisher'
+      },
+      {
+        filename: 'jetbrains',
+        name: 'PHP Storm'
+      },
+      {
+        filename: 'vscode',
+        name: 'Visual Studio Code'
+      },
+      {
+        filename: 'html',
+        name: 'HTML'
+      },
+      {
+        filename: 'css',
+        name: 'CSS'
+      },
+      {
+        filename: 'sass',
+        name: 'Sass'
+      },
+      {
+        filename: 'tailwindcss',
+        name: 'Tailwind CSS'
+      },
+      {
+        filename: 'php',
+        name: 'PHP'
+      },
+      {
+        filename: 'javascript',
+        name: 'Javascript'
+      },
+      {
+        filename: 'vuejs',
+        name: 'Vue JS'
+      },
+      {
+        filename: 'nuxtjs',
+        name: 'Nuxt JS'
+      },
+      {
+        filename: 'react',
+        name: 'React'
+      },
+      {
+        filename: 'nextjs',
+        name: 'Next JS'
+      },
+      {
+        filename: 'wordpress',
+        name: 'Wordpress'
+      },
+      {
+        filename: 'craftcms',
+        name: 'Craft CMS'
+      }
+    ]
+    return {
+      experience,
+      projects,
+      skills
+    }
+  }
+}
+</script>
