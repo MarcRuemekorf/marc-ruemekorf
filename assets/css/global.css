@@ -52,15 +52,15 @@ html {
 
 .tooltip .tooltip-inner {
   @apply
-  bg-black/50
+  bg-black/75
   text-white
-  rounded-sm
+  rounded
   py-1
   px-2;
 }
 
 .tooltip .tooltip-arrow {
-  @apply w-0 h-0 absolute m-1 z-10 border border-solid border-black/50;
+  @apply w-0 h-0 absolute m-1 z-10 border border-solid border-black/75;
 }
 
 .tooltip[x-placement^="top"] {

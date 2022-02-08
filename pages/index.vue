@@ -11,7 +11,7 @@
           </div>
         </div>
       </div>
-      <div class="order-1 lg:absolute lg:bottom-0 lg:right-0 lg:w-1/2">
+      <div class="order-1 hidden lg:block lg:absolute lg:bottom-0 lg:right-0 lg:w-1/2">
         <img class="h-auto w-full sm:h-auto md:h-auto lg:w-full lg:h-auto" src="~/assets/images/hero-logos.png" alt="" />
       </div>
     </div>
@@ -44,7 +44,7 @@
             Na mijn studie in media vormgeving op het Koning Willem I College ben ik aan de slag gegaan als webdesigner bij een jong en ambitieus webbureau in Breda. Hier werd mijn interesse in het ontwikkelen van websites en applicaties opgewekt. Ik heb altijd de wens gehad om mijn ontwerpen leven in te blazen en heb zo een passie gekweekt voor front-end technieken. Sindsdien ben ik aan de slag gegaan als ZZP’er en heb ik mijzelf verdiept in de nodige technieken om de meest efficiënte en gebruiksvriendelijke websites en applicaties te ontwikkelen.
           </p>
           <p class="mt-3">
-            Tijdens mijn periode als freelancer heb ik met een klein team ook veel tijd besteed aan het oprichten van 2 IT bedrijfjes dat gespecialiseerde software ontwikkelde. Hierbij was ik verantwoordelijk voor het design en de front-end.
+            Tijdens mijn periode als freelancer heb ik met een klein team ook veel tijd besteed aan het oprichten van 3 IT bedrijfjes dat gespecialiseerde software ontwikkelde. Hierbij was ik verantwoordelijk voor het design en de front-end.
           </p>
           <p class="mt-3">
             Ook in mijn vrije tijd houd ik mij bezig met het ontwikkelen van nieuwe applicaties/websites en het uitproberen van verschillende technieken en frameworks. Mijn focus ligt momenteel op het beheersen van Javascript en frameworks zoals React en Vue.
@@ -56,14 +56,14 @@
     <!-- Experience -->
     <div class="max-w-7xl mx-auto mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
       <h2 class="text-2xl font-bold mb-6">Werkervaring</h2>
-      <div class="md:grid md:grid-cols-12 md:grid-rows-5 md:grid-flow-col md:gap-y-6">
-        <div v-for="(block, index) in experience" :key="index" :class="[...block.size]">
+      <div class="md:grid md:grid-cols-12 md:grid-rows-auto md:grid-flow-col md:gap-y-6 z-10 relative">
+        <div v-for="(block, index) in experience" :key="index" :class="['mt-6 md:mt-0', ...block.size]">
           <div :class="['bg-white border-b-2 h-full w-full p-3 rounded shadow-md', block.borderColor]">
             <h3 class="font-semibold">{{ block.company }}</h3>
             <p class="text-sm text-gray-500">{{ block.period }}</p>
             <p class="mt-2">{{ block.position }}</p>
-            <div class="mt-3 flex space-x-2">
-              <img v-for="(skill, index) in block.skills" :key="index" :src="require(`~/assets/images/logos/${skill}.png`)" alt="" class="h-5 w-5" />
+            <div class="flex flex-wrap">
+              <img v-for="(skill, index) in block.skills" :key="index" :src="require(`~/assets/images/logos/${skill.filename}.png`)" alt="" class="h-5 w-5 mr-2 mt-3" v-tooltip="skill.name" />
             </div>
           </div>
         </div>
@@ -72,14 +72,14 @@
 
     <!-- Projects -->
     <div class="bg-gradient-to-b from-gray-100 via-gray-50 -mt-12">
-      <div class="max-w-4xl mx-auto px-4 py-16 sm:px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:pt-24 lg:px-8">
-        <h2 class="text-2xl font-bold mb-6">Projecten waar ik aan heb mogen werken</h2>
-        <p class="mt-4 max-w-3xl text-lg">
-          Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis. Blandit aliquam sit nisl euismod mattis in.
+      <div class="max-w-4xl mx-auto px-4 pt-24 md:pt-16 pb-16 sm:px-6 sm:pb-24 lg:max-w-7xl lg:pt-24 lg:px-8">
+        <h2 class="text-2xl font-bold mb-6">Projecten</h2>
+        <p class="sr-only mt-4 max-w-3xl text-lg">
+          Projecten waar ik met trots aan heb mogen werken.
         </p>
-        <div class="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
+        <div class="mt-12 grid grid-cols-1 gap-x-6 gap-y-6 lg:gap-y-12 sm:grid-cols-2 lg:mt-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
           <div v-for="project in projects" :key="project.name">
-            <div class="mt-6">
+            <div>
               <h3 class="text-lg font-semibold">{{ project.name }}</h3>
               <p class="mt-2 text-base">
                 {{ project.description }}
@@ -142,6 +142,97 @@
 export default {
   name: 'IndexPage',
   setup() {
+    const skills = {
+      'illustrator': {
+        name: 'Illustrator',
+        filename: 'illustrator'
+      },
+      'photoshop': {
+        name: 'Photoshop',
+        filename: 'photoshop'
+      },
+      'adobe-xd': {
+        name: 'Adobe XD',
+        filename: 'adobe-xd'
+      },
+      'sketch': {
+        name: 'Sketch',
+        filename: 'sketch'
+      },
+      'figma': {
+        name: 'Figma',
+        filename: 'figma'
+      },
+      'google-web-designer': {
+        name: 'Google Web Designer',
+        filename: 'google-web-designer'
+      },
+      'affinity-designer': {
+        name: 'Affinity Designer',
+        filename: 'affinity-designer'
+      },
+      'affinity-photo': {
+        name: 'Affinity Photo',
+        filename: 'affinity-photo'
+      },
+      'affinity-publisher': {
+        name: 'Affinity Publisher',
+        filename: 'affinity-publisher'
+      },
+      'jetbrains': {
+        name: 'PHP Storm',
+        filename: 'jetbrains'
+      },
+      'vscode': {
+        name: 'Visual Studio Code',
+        filename: 'vscode'
+      },
+      'html': {
+        name: 'HTML',
+        filename: 'html'
+      },
+      'css': {
+        name: 'CSS',
+        filename: 'css'
+      },
+      'sass': {
+        name: 'Sass',
+        filename: 'sass'
+      },
+      'tailwindcss': {
+        name: 'Tailwind CSS',
+        filename: 'tailwindcss'
+      },
+      'php': {
+        name: 'PHP',
+        filename: 'php'
+      },
+      'javascript': {
+        name: 'Javascript',
+        filename: 'javascript'
+      },
+      'vuejs': {
+        name: 'Vue JS',
+        filename: 'vuejs'
+      },
+      'nuxtjs': {
+        name: 'Nuxt JS',
+        filename: 'nuxtjs'
+      },
+      'react': {
+        name: 'React',
+        filename: 'react'
+      },
+      'nextjs': {
+        name: 'Next JS',
+        filename: 'nextjs'
+      },
+      'wordpress': {
+        name: 'WordPress',
+        filename: 'wordpress'
+      },
+
+    }
     const experience = [
       {
         company: "Celebrate Media",
@@ -150,78 +241,87 @@ export default {
         size: ['row-start-1 col-start-1 col-span-3'],
         borderColor: "border-green-500",
         skills: [
-          "photoshop",
-          "illustrator"
+          skills['illustrator'],
+          skills['photoshop'],
+          skills['sketch']
         ]
       },
       {
         company: "Freelance",
-        position: "Graphic & UI/UX designer, Front-end developer",
+        position: "Grafisch & UI/UX designer, Front-end ontwikkelaar",
         period: "2013 - heden",
         size: ['row-start-2 col-start-3 col-span-11'],
         borderColor: "border-black",
         skills: [
-          "affinity-designer",
-          "affinity-photo",
-          "affinity-publisher",
-          "google-web-designer",
-          "sketch",
-          "vscode",
-          "jetbrains",
-          "sourcetree",
-          "trello",
-          "wordpress"
+          skills['affinity-designer'],
+          skills['affinity-photo'],
+          skills['affinity-publisher'],
+          skills['sketch'],
+          skills['google-web-designer'],
+          skills['html'],
+          skills['css'],
+          skills['php'],
+          skills['javascript'],
+          skills['wordpress'],
+          skills['react'],
+          skills['vuejs'],
+          skills['nuxtjs']
         ]
       },
       {
         company: "Launchtin",
-        position: "Front-end developer",
+        position: "Medeoprichter, Grafisch & UI/UX designer, Front-end ontwikkelaar",
         period: "2015 - 2018",
         size: ['row-start-3 col-start-4 col-span-5'],
         borderColor: "border-pink-600",
         skills: [
-          "illustrator",
-          "photoshop",
-          "indesign",
-          "sketch",
-          "vscode",
-          "sourcetree",
-          "trello",
-          "wordpress"
+          skills['photoshop'],
+          skills['illustrator'],
+          skills['affinity-designer'],
+          skills['affinity-photo'],
+          skills['affinity-publisher'],
+          skills['sketch'],
+          skills['html'],
+          skills['css'],
+          skills['php'],
+          skills['javascript'],
+          skills['wordpress']
         ]
       },
       {
         company: "Doen IT",
-        position: "UI/UX designer, Front-end developer",
+        position: "Medeoprichter, UI/UX designer, Front-end ontwikkelaar",
         period: "2018 - 2020",
         size: ['row-start-4 col-start-7 col-span-3'],
         borderColor: "border-teal-500",
         skills: [
-          "affinity-designer",
-          "affinity-photo",
-          "affinity-publisher",
-          "sketch",
-          "jetbrains",
-          "sourcetree",
-          "jira",
-          "wordpress"
+          skills['affinity-designer'],
+          skills['affinity-photo'],
+          skills['sketch'],
+          skills['html'],
+          skills['css'],
+          skills['php'],
+          skills['javascript'],
+          skills['wordpress'],
+          skills['vuejs']
         ]
       },
       {
         company: "Digital Forge",
-        position: "UI/UX designer, Front-end developer",
+        position: "Medeoprichter, UI/UX designer, Front-end ontwikkelaar",
         period: "2020 - heden",
         size: ['row-start-5 col-start-10 col-span-3'],
         borderColor: "border-violet-900",
         skills: [
-          "affinity-designer",
-          "affinity-photo",
-          "affinity-publisher",
-          "sketch",
-          "jetbrains",
-          "sourcetree",
-          "jira",
-          "wordpress"
+          skills['affinity-designer'],
+          skills['affinity-photo'],
+          skills['sketch'],
+          skills['html'],
+          skills['css'],
+          skills['php'],
+          skills['javascript'],
+          skills['vuejs'],
+          skills['nuxtjs']
         ]
       }
     ]
@@ -271,100 +371,6 @@ export default {
         description: "Door middel van een presentatie in de vorm van een filmpje of presentatie worden vrijwilligers in het zonnetje gezet en maken zij automatisch kans op een prijs.",
         responsibilities: ["Webdesign", "Ontwikkeling"]
       },
-    ]
-    const skills = [
-      {
-        filename: 'photoshop',
-        name: 'Adobe Photoshop'
-      },
-      {
-        filename: 'illustrator',
-        name: 'Adobe Illustrator'
-      },
-      {
-        filename: 'adobe-xd',
-        name: 'Adobe XD'
-      },
-      {
-        filename: 'sketch',
-        name: 'Sketch'
-      },
-      {
-        filename: 'figma',
-        name: 'Figma'
-      },
-      {
-        filename: 'google-web-designer',
-        name: 'Googe Web Designer'
-      },
-      {
-        filename: 'affinity-designer',
-        name: 'Affinity Desigener'
-      },
-      {
-        filename: 'affinity-photo',
-        name: 'Affinity Photo'
-      },
-      {
-        filename: 'affinity-publisher',
-        name: 'Affinity Publisher'
-      },
-      {
-        filename: 'jetbrains',
-        name: 'PHP Storm'
-      },
-      {
-        filename: 'vscode',
-        name: 'Visual Studio Code'
-      },
-      {
-        filename: 'html',
-        name: 'HTML'
-      },
-      {
-        filename: 'css',
-        name: 'CSS'
-      },
-      {
-        filename: 'sass',
-        name: 'Sass'
-      },
-      {
-        filename: 'tailwindcss',
-        name: 'Tailwind CSS'
-      },
-      {
-        filename: 'php',
-        name: 'PHP'
-      },
-      {
-        filename: 'javascript',
-        name: 'Javascript'
-      },
-      {
-        filename: 'vuejs',
-        name: 'Vue JS'
-      },
-      {
-        filename: 'nuxtjs',
-        name: 'Nuxt JS'
-      },
-      {
-        filename: 'react',
-        name: 'React'
-      },
-      {
-        filename: 'nextjs',
-        name: 'Next JS'
-      },
-      {
-        filename: 'wordpress',
-        name: 'Wordpress'
-      },
-      {
-        filename: 'craftcms',
-        name: 'Craft CMS'
-      }
     ]
     return {
       experience,
