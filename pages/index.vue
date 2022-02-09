@@ -28,6 +28,8 @@
             <dd>Woonplaats: <span class="font-bold">Rosmalen</span></dd>
             <dt class="sr-only">Nationaliteit</dt>
             <dd>Nationaliteit: <span class="font-bold">Nederlands/Amerikaans</span></dd>
+            <dt class="sr-only">Talen</dt>
+            <dd>Nationaliteit: <span class="font-bold">Nederlands, Engels</span></dd>
             <dt class="sr-only">Telefoonnummer</dt>
             <dd>Telefoonnummer: <span class="font-bold">0652614323</span></dd>
             <dt class="sr-only">E-mail</dt>
@@ -348,7 +350,7 @@ export default {
       },
       {
         name: "City Resort Hotels",
-        description: "Een initiatief om eenvoudig en snel vakhoveniers te vinden in de buurt. Hierbij heb ik het ontwerp proces bijgestaan en de website vervolgens in het CMS Wordpress online gezet.",
+        description: "Ik was verantwoordelijk voor zowel het ontwerpen van de website als de ontwikkeling. De site werd ontwikkeld met behulp van het Wordpress CMS. Hiervoor is een op-maat thema ontwikkeld.",
         responsibilities: ["Webdesign", "Ontwikkeling"]
       },
       {
