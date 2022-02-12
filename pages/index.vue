@@ -29,16 +29,23 @@
             <dt class="sr-only">Nationaliteit</dt>
             <dd>Nationaliteit: <span class="font-bold">Nederlands/Amerikaans</span></dd>
             <dt class="sr-only">Talen</dt>
-            <dd>Nationaliteit: <span class="font-bold">Nederlands, Engels</span></dd>
+            <dd>Talen: <span class="font-bold">Nederlands, Engels</span></dd>
             <dt class="sr-only">Telefoonnummer</dt>
             <dd>Telefoonnummer: <span class="font-bold">0652614323</span></dd>
             <dt class="sr-only">E-mail</dt>
             <dd>E-mail: <span class="font-bold">hallo@marcruemekorf.nl</span></dd>
           </dl>
 
-          <a href="/downloads/CV_marcruemekorf.pdf" target="_blank" class="inline-flex items-center px-3 py-2 mt-6 border border-transparent shadow-sm text-sm leading-4 font-medium rounded-md text-white bg-black hover:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black">
-            Download CV
-          </a>
+          <div class="flex space-x-2 items-center mt-6">
+            <a href="/downloads/CV_marcruemekorf.pdf" target="_blank" class="inline-flex items-center px-3 py-2 border border-transparent shadow-sm text-sm leading-4 font-medium rounded-md text-white bg-black hover:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black">
+              Download CV
+            </a>
+            <a href="https://www.linkedin.com/in/marcruemekorf" target="_blank" class="inline-flex items-center p-1.5 border border-transparent rounded-md shadow text-black bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                <path d="M19,0L5,0C2.239,0 0,2.239 0,5L0,19C0,21.761 2.239,24 5,24L19,24C21.762,24 24,21.761 24,19L24,5C24,2.239 21.762,0 19,0ZM8,19L5,19L5,8L8,8L8,19ZM6.5,6.732C5.534,6.732 4.75,5.942 4.75,4.968C4.75,3.994 5.534,3.204 6.5,3.204C7.466,3.204 8.25,3.994 8.25,4.968C8.25,5.942 7.467,6.732 6.5,6.732ZM20,19L17,19L17,13.396C17,10.028 13,10.283 13,13.396L13,19L10,19L10,8L13,8L13,9.765C14.396,7.179 20,6.988 20,12.241L20,19Z" style="fill-rule:nonzero;"/>
+              </svg>
+            </a>
+          </div>
         </div>
         <div class="col-span-3 content-start mt-12 md:mt-0 lg:mt-24">
           <h3 class="text-xl font-bold">Over mij</h3>
