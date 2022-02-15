@@ -117,14 +117,14 @@
                   <span class="block text-lg leading-6 font-semibold text-gray-900">FreeCodeCamp, online - <span class="italic">Full Stack Web Development</span></span>
                   <span class="block text-sm text-gray-400">2016 - 2017</span>
                 </dt>
-                <dd class="mt-2 text-base text-gray-500">FreeCodeCamp heeft mij de basis geleerd mijn designs om te zetten in code.</dd>
+                <dd class="mt-2 text-base text-gray-500">FreeCodeCamp heeft mij de basis geleerd mijn designs om te zetten in code en helpt mij nog altijd mijzelf te verbeteren.</dd>
               </div>
               <div>
                 <dt>
-                  <span class="block text-lg leading-6 font-semibold text-gray-900">Koning Willen I College, 's-Hertongenbosch - <span class="italic">Mediavormgeving</span></span>
+                  <span class="block text-lg leading-6 font-semibold text-gray-900">Koning Willen I College, 's-Hertogenbosch - <span class="italic">Mediavormgeving (MBO niveau 4)</span></span>
                   <span class="block text-sm text-gray-400">2009 - 2013</span>
                 </dt>
-                <dd class="mt-2 text-base text-gray-500">Tijdens mijn opleiding heb ik geleerd wat een design sterk maakt en hoe ik dit in praktijk toe kan passen.</dd>
+                <dd class="mt-2 text-base text-gray-500">Tijdens mijn opleiding heb ik onder andere geleerd wat een design sterk maakt en hoe ik dit in de praktijk toe kan passen.</dd>
               </div>
             </dl>
           </div>
