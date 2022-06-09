@@ -25,13 +25,13 @@
             <dt class="sr-only">Geboorte datum</dt>
             <dd>Geboorte datum: <span class="font-bold">24-06-1991</span></dd>
             <dt class="sr-only">Woonplaats</dt>
-            <dd>Woonplaats: <span class="font-bold">Rosmalen</span></dd>
+            <dd>Woonplaats: <span class="font-bold">Weesp</span></dd>
             <dt class="sr-only">Nationaliteit</dt>
             <dd>Nationaliteit: <span class="font-bold">Nederlands/Amerikaans</span></dd>
             <dt class="sr-only">Talen</dt>
             <dd>Talen: <span class="font-bold">Nederlands, Engels</span></dd>
             <dt class="sr-only">Telefoonnummer</dt>
-            <dd>Telefoonnummer: <span class="font-bold">0652614323</span></dd>
+            <dd>Telefoonnummer: <span class="font-bold">+31 (0)6 52 61 43 23</span></dd>
             <dt class="sr-only">E-mail</dt>
             <dd>E-mail: <span class="font-bold">hallo@marcruemekorf.nl</span></dd>
           </dl>
