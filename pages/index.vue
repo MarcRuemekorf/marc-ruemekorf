@@ -380,6 +380,21 @@ export default {
         description: "Door middel van een presentatie in de vorm van een filmpje of presentatie worden vrijwilligers in het zonnetje gezet en maken zij automatisch kans op een prijs.",
         responsibilities: ["Webdesign", "Ontwikkeling"]
       },
+      {
+        name: "Docqer (on-hold)",
+        description: "Een managementsysteem voor advocaten. Docqer is een totaaloverzicht van lopende werkzaamheden rondom cases en cliënten en biedt de functionaliteit deze zaken en alles dat daarbij hoort op een centraal systeem bij te houden.",
+        responsibilities: ["UI Design", "Front-end ontwikkeling"]
+      },
+      {
+        name: "Relay (WIP)",
+        description: "Een alles-in-1 platform voor uitzendbureaus. Relay maakt het mogelijk om binnen enkele seconden duizenden potentiële werknemers te bereiken. Ook is het een robuust office management systeem.",
+        responsibilities: ["UI Design", "Front-end ontwikkeling"]
+      },
+      {
+        name: "Ordonis (WIP)",
+        description: "Een compleet webshop management systeem. Ordonis biedt een centraal punt om alle webshop kanalen, bestellingen, producten, klanten en meer te beheren.",
+        responsibilities: ["UI Design", "Front-end ontwikkeling"]
+      },
     ]
     return {
       experience,
